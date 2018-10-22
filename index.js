@@ -16,6 +16,9 @@ i18next.use(LngDetector).init({
           watch_button: 'Watch',
           errorurl: "URL is not right or not supported",
           error: "Error"
+        },
+        info: {
+          version: "Version"
         }
       }
     },
@@ -26,6 +29,9 @@ i18next.use(LngDetector).init({
           watch_button: 'Смотреть',
           errorurl: "URL неправильный или не поддерживается",
           error: "Ошибка"
+        },
+        info: {
+          version: "Версия"
         }
       }
     }
@@ -48,6 +54,13 @@ $(".back").click(function() {
   $(".video").css("display","none")
   $(".back").css("display","none")
   $(".video-player").attr("src", "oops.html")
+})
+
+$(".about").click(function() {
+  remote.dialog.showMessageBox(new remote.BrowserWindow({
+    show: false,
+    alwaysOnTop: true
+  }),{type: "info", title: "flexPiP", message: `flexPiP`, detail: `${i18next.t("info.version")}: 0.0.1\nmegaworld network`})
 })
 
 // parse url function
