@@ -1,0 +1,42 @@
+{
+  "name": "flexpip",
+  "version": "1.0",
+  "description": "PiP for video services",
+  "main": "main.js",
+  "homepage": "https://megaworldnetwork.ru/projects/flexpip",
+  "author": {
+    "name": "nik9",
+    "email": "nik9play@cock.li"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "ru.mw.flexpip",
+    "mac": {
+      "category": "public.app-category.video"
+    },
+    "copyright": "Copyright © 2018 MegaWorld Network",
+    "dmg": {
+      "title": "flexPiP"
+    },
+    "win": {
+      "target": "portable"
+    }
+  },
+  "devDependencies": {
+    "electron": "^3.0.5",
+    "electron-builder": "^20.28.4"
+  },
+  "dependencies": {
+    "electron-updater": "^3.1.2",
+    "i18next": "^11.10.0",
+    "i18next-electron-language-detector": "^0.0.10",
+    "jquery": "^3.3.1",
+    "jquery-i18next": "^1.2.1",
+    "lodash": "^4.17.11"
+  }
+}
