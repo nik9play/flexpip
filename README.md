@@ -12,4 +12,7 @@ yarn dist
 ```
 # Download
 
-[Windows](https://megaworldnetwork.ru/flexpip/flexpip1.exe)
+## Windows
+[Portable](https://megaworldnetwork.ru/flexpip/flexpip%201.0.0.exe)
+## Linux
+[AppImage](https://megaworldnetwork.ru/flexpip/flexpip-1.0.0-x86_64.AppImage)
