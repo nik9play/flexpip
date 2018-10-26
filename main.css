@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
-  transition:all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .first-input:focus {
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   cursor: pointer;
   outline: none;
-  transition:all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .first-button:active {
