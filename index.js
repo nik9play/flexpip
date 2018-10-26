@@ -84,11 +84,13 @@ function parseUrl(url) {
 }
 //first button
 $(".first-button").click(function() {
-  var url = $(".first-input").val()
-  if (!_.isEmpty(url)) {
-    var url = parseUrl(url)
-    //sets protocol to https for correct parsing
-    url.protocol = "https:"
+  var urlinput = $(".first-input").val()
+  if (!_.isEmpty(urlinput)) {
+    var url = parseUrl(urlinput)
+    if (url.protocol == "file:") {
+      urlinput = "https://" + urlinput
+      url = parseUrl(urlinput)
+    }
     var domain = url.hostname
     switch(domain) {
       case 'youtube.com':
