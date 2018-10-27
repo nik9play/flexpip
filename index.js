@@ -12,8 +12,8 @@ i18next.use(LngDetector).init({
     en: {
       translation: {
         main: {
-          header: 'Enter video URL',
-          watch_button: 'Watch',
+          header: "Enter video URL",
+          watch_button: "Watch",
           errorurl: "URL is not right or not supported",
           error: "Error"
         },
@@ -25,8 +25,8 @@ i18next.use(LngDetector).init({
     ru: {
       translation: {
         main: {
-          header: 'Введите URL видео',
-          watch_button: 'Смотреть',
+          header: "Введите URL видео",
+          watch_button: "Смотреть",
           errorurl: "URL неправильный или не поддерживается",
           error: "Ошибка"
         },
@@ -55,7 +55,7 @@ $(".back").click(function() {
   $(".back").css("display","none")
   $(".video-player").attr("src", "oops.html")
 })
-
+//about button
 $(".about").click(function() {
   remote.dialog.showMessageBox(new remote.BrowserWindow({
     show: false,
@@ -82,11 +82,13 @@ function parseUrl(url) {
 
 	return parser
 }
+
 //first button
 $(".first-button").click(function() {
   var urlinput = $(".first-input").val()
   if (!_.isEmpty(urlinput)) {
     var url = parseUrl(urlinput)
+    // check if url is without https://
     if (url.protocol == "file:") {
       urlinput = "https://" + urlinput
       url = parseUrl(urlinput)
