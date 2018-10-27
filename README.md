@@ -13,6 +13,8 @@ yarn dist
 # Download
 
 ## Windows
-[Portable](https://megaworldnetwork.ru/flexpip/flexpip%201.0.0.exe)
+[Portable](https://megaworldnetwork.ru/flexpip/flexpip-latest.exe)
 ## Linux
-[AppImage](https://megaworldnetwork.ru/flexpip/flexpip-1.0.0-x86_64.AppImage)
+[AppImage](https://megaworldnetwork.ru/flexpip/flexpip-latest.AppImage)
+[snap](https://megaworldnetwork.ru/flexpip/flexpip-latest.snap)
+[Debian-based dists](https://megaworldnetwork.ru/flexpip/flexpip-latest.deb)
