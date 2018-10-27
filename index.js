@@ -60,7 +60,7 @@ $(".about").click(function() {
   remote.dialog.showMessageBox(new remote.BrowserWindow({
     show: false,
     alwaysOnTop: true
-  }),{type: "info", title: "flexPiP", message: `flexPiP`, detail: `${i18next.t("info.version")}: 0.0.1\nmegaworld network`})
+  }),{type: "info", title: "flexPiP", message: `flexPiP`, detail: `${i18next.t("info.version")}: 2.0.0\nmegaworld network`})
 })
 
 // parse url function
