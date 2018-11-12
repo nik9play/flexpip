@@ -18,3 +18,5 @@ yarn dist
 [AppImage](https://megaworldnetwork.ru/flexpip/flexpip-latest.AppImage)
 [snap](https://megaworldnetwork.ru/flexpip/flexpip-latest.snap)
 [Debian-based dists](https://megaworldnetwork.ru/flexpip/flexpip-latest.deb)
+## macOS
+[DMG](https://megaworldnetwork.ru/flexpip/flexpip-latest.dmg)
