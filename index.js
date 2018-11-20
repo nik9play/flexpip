@@ -1,4 +1,4 @@
-var {remote, dialog} = require('electron')
+var {remote} = require('electron')
 var _ = require('lodash')
 var $ = require("jquery")
 var i18next = require("i18next")
@@ -19,6 +19,17 @@ i18next.use(LngDetector).init({
         },
         info: {
           version: "Version"
+        },
+        menu: {
+          undo: "Undo",
+          redo: "Redo",
+          copy: "Copy",
+          paste: "Paste",
+          cut: "Cut",
+          selectall: "Select All",
+          quit: "Quit",
+          about: "About",
+          edit: "Edit"
         }
       }
     },
@@ -32,6 +43,17 @@ i18next.use(LngDetector).init({
         },
         info: {
           version: "Версия"
+        },
+        menu: {
+          undo: "Отменить",
+          redo: "Вернуть",
+          copy: "Копировать",
+          paste: "Вставить",
+          cut: "Вырезать",
+          selectall: "Выбрать все",
+          quit: "Выйти",
+          about: "О приложении",
+          edit: "Правка"
         }
       }
     }
@@ -40,6 +62,32 @@ i18next.use(LngDetector).init({
   jqueryI18next.init(i18next, $);
   $('.first-page').localize();
 });
+
+var template = [{
+  label: "Application",
+  submenu: [
+      { label: i18next.translator.translate("menu.about"), click: function() { 
+        win.setAlwaysOnTop(false)
+        remote.dialog.showMessageBox(win, {type: "info", title: "flexPiP", message: "flexPiP", buttons: ["OK"], detail: `${i18next.t("info.version")}: 2.0.0\nmegaworld network`}, function() {
+          win.setAlwaysOnTop(true)
+        })
+       } },
+      { type: "separator" },
+      { label: i18next.translator.translate("menu.quit"), accelerator: "Command+Q", click: function() { app.quit(); }}
+  ]}, {
+  label: i18next.translator.translate("menu.edit"),
+  submenu: [
+      { label: i18next.translator.translate("menu.undo"), accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+      { label: i18next.translator.translate("menu.redo"), accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+      { type: "separator" },
+      { label: i18next.translator.translate("menu.cut"), accelerator: "CmdOrCtrl+X", selector: "cut:" },
+      { label: i18next.translator.translate("menu.copy"), accelerator: "CmdOrCtrl+C", selector: "copy:" },
+      { label: i18next.translator.translate("menu.paste"), accelerator: "CmdOrCtrl+V", selector: "paste:" },
+      { label: i18next.translator.translate("menu.selectall"), accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+  ]}
+];
+
+remote.Menu.setApplicationMenu(remote.Menu.buildFromTemplate(template));
 
 //alwaysOnTop: true in BrowserWindow config doesnt work on linux
 var win = remote.getCurrentWindow()
