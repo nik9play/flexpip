@@ -13,10 +13,10 @@ yarn dist
 # Download
 
 ## Windows
-[Portable](https://megaworldnetwork.ru/flexpip/flexpip-latest.exe)
+[Portable](https://bitbucket.org/nik9play/flexpip/downloads/flexpip_2.1.0.exe)
 ## Linux
 [AppImage](https://megaworldnetwork.ru/flexpip/flexpip-latest.AppImage)
 [snap](https://megaworldnetwork.ru/flexpip/flexpip-latest.snap)
 [Debian-based dists](https://megaworldnetwork.ru/flexpip/flexpip-latest.deb)
 ## macOS
-[DMG](https://megaworldnetwork.ru/flexpip/flexpip-latest.dmg)
+[DMG](https://bitbucket.org/nik9play/flexpip/downloads/flexpip-2.1.0.dmg)
