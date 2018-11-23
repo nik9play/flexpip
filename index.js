@@ -68,12 +68,13 @@ var template = [{
   submenu: [
       { label: i18next.translator.translate("menu.about"), click: function() { 
         win.setAlwaysOnTop(false)
-        remote.dialog.showMessageBox(win, {type: "info", title: "flexPiP", message: "flexPiP", buttons: ["OK"], detail: `${i18next.t("info.version")}: 2.0.0\nmegaworld network`}, function() {
+        remote.dialog.showMessageBox(win, {type: "info", title: "flexPiP", message: "flexPiP", buttons: ["OK"], detail: `${i18next.t("info.version")}: ${remote.app.getVersion()}\nmegaworld network`}, function() {
           win.setAlwaysOnTop(true)
         })
        } },
       { type: "separator" },
-      { label: i18next.translator.translate("menu.quit"), accelerator: "Command+Q", click: function() { app.quit(); }}
+      { label: i18next.translator.translate("menu.quit"), accelerator: "Command+Q", click: function() { app.quit(); }},
+      { label: "Open WebTools", click: function() { win.webContents.openDevTools(); }}
   ]}, {
   label: i18next.translator.translate("menu.edit"),
   submenu: [
@@ -106,7 +107,7 @@ $(".back").click(function() {
 //about button
 $(".about").click(function() {
   win.setAlwaysOnTop(false)
-  remote.dialog.showMessageBox(win, {type: "info", title: "flexPiP", message: "flexPiP", buttons: ["OK"], detail: `${i18next.t("info.version")}: 2.0.0\nmegaworld network`}, function() {
+  remote.dialog.showMessageBox(win, {type: "info", title: "flexPiP", message: "flexPiP", buttons: ["OK"], detail: `${i18next.t("info.version")}: ${remote.app.getVersion()}\nmegaworld network`}, function() {
     win.setAlwaysOnTop(true)
   })
 })
@@ -188,7 +189,10 @@ $(".first-button").click(function() {
         $(".video-player").attr("src", uri)
         break;
       default:
-        remote.dialog.showMessageBox(new remote.BrowserWindow({show: false, alwaysOnTop: true}),{type:"info", title: i18next.t("main.error"), message:i18next.t("main.errorurl")})
+        win.setAlwaysOnTop(false)
+        remote.dialog.showMessageBox(win, {type:"error", title: i18next.t("main.error"), message:i18next.t("main.errorurl")}, function() {
+          win.setAlwaysOnTop(true)
+        })
     }
   }
 })
